@@ -10,6 +10,10 @@ libraryDependencies ++= Seq(
   "junit" % "junit" % "4.12" % "test"
 )
 
+addSbtPlugin("com.typesafe.sbt" % "sbt-web" % "1.5.2-SNAPSHOT")
+
+ScriptedPlugin.projectSettings
+
 publishMavenStyle := true
 
 //addSbtWeb("1.5.2-SNAPSHOT")
