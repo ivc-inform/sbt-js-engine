@@ -347,7 +347,7 @@ object SbtJsTask extends AutoPlugin {
 
   private def addUnscopedJsSourceFileTasks(sourceFileTask: TaskKey[Seq[File]]): Seq[Setting[_]] = {
     Seq(
-      resourceGenerators <+= sourceFileTask,
+      resourceGenerators += sourceFileTask,
       managedResourceDirectories += (resourceManaged in sourceFileTask).value
     ) ++ inTask(sourceFileTask)(Seq(
       managedSourceDirectories ++= Def.settingDyn { sourceDependencies.value.map(resourceManaged in _).join }.value,

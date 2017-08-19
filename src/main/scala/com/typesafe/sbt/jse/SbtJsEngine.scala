@@ -122,7 +122,7 @@ object SbtJsEngine extends AutoPlugin {
       runUpdate(Set(npmPackageJson)).toSeq
     }.dependsOn(webJarsNodeModules in Plugin).value,
 
-    nodeModuleGenerators <+= npmNodeModules,
+    nodeModuleGenerators += npmNodeModules,
     nodeModuleDirectories += baseDirectory.value / NodeModules
   )
 

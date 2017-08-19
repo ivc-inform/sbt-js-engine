@@ -10,4 +10,6 @@ libraryDependencies ++= Seq(
   "junit" % "junit" % "4.12" % "test"
 )
 
-addSbtWeb("1.4.1")
+publishMavenStyle := true
+
+addSbtWeb("1.4.2-SNAPSHOT")
