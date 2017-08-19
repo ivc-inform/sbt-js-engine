@@ -6,6 +6,7 @@ import com.typesafe.npm.Npm
 import com.typesafe.sbt.web.SbtWeb
 import sbt.Keys._
 import sbt._
+import scala.sys.process._
 
 import scala.collection.immutable
 import scala.concurrent.duration._
