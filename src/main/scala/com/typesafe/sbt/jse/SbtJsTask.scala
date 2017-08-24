@@ -18,6 +18,7 @@ import xsbti.{Problem, Severity}
 import scala.collection.immutable
 import scala.concurrent.duration._
 import scala.concurrent.{Await, ExecutionContext, Future}
+import com.simplesys.io._
 
 object JsTaskImport {
 
@@ -289,10 +290,10 @@ object SbtJsTask extends AutoPlugin {
         val _taskMessage = (taskMessage in task in config).value
         val _parallelism = (parallelism in task).value
         val _timeoutPerSource = (timeoutPerSource in task in config).value
-        val _sourceDirectories = (sourceDirectories in task in config).value
+        val _sourceDirectories: Seq[File] = (sourceDirectories in task in config).value.map(_.checkDirectory)
+        val _resourceManaged: File = (resourceManaged in task in config).value.checkDirectory
         val _state = state.value
         val _shellSource = (shellSource in task in config).value
-        val _resourceManaged = (resourceManaged in task in config).value
         val __jsOptions = (jsOptions in task in config).value
 
         implicit val opInputHasher = (fileInputHasher in task in config).value
