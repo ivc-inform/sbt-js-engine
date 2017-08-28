@@ -12,4 +12,4 @@ libraryDependencies ++= Seq(
 
 publishMavenStyle := true
 
-addSbtWeb("1.4.2-SNAPSHOT")
+addSbtWeb("1.4.2.1")
