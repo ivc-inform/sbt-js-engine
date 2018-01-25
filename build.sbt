@@ -2,7 +2,7 @@ lazy val `sbt-js-engine` = project in file(".")
 
 description := "sbt js engine plugin"
 
-val ssysCoreVersion = "1.4-SNAPSHOT"
+val ssysCoreVersion = "1.5-SNAPSHOT"
 
 libraryDependencies ++= Seq(
   "com.typesafe" %% "jse" % "1.2.3",
@@ -13,7 +13,7 @@ libraryDependencies ++= Seq(
   "junit" % "junit" % "4.12" % "test"
 )
 
-addSbtPlugin("com.typesafe.sbt" % "sbt-web" % "1.5.2-SNAPSHOT")
+addSbtPlugin("com.typesafe.sbt" % "sbt-web" % "1.5.4-SNAPSHOT")
 
 ScriptedPlugin.projectSettings
 
